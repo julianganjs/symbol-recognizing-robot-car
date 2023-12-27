@@ -23,13 +23,6 @@ pip install pytesseract
 pip install RPi.GPIO
 ```
 
-## Symbols
-
-<img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/d8e6453d-f775-4611-97ad-5a6c90cac6d3" width="180vw">
-<img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/ae2e77c5-ae63-4843-833f-c78db4246b2b" width="180vw">
-<img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/de9b12ba-636b-449a-b6ad-035eb03ec34a" width="180vw">
-<img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/313e4f12-12df-407a-8f13-c1a78754780a" width="180vw">
-
 ## Features
 ### Symbol Recognition
 - ### Methodology
@@ -49,4 +42,20 @@ Color masking was used to isolate the red color of the stop sign in the ROI. The
 ### Distance Measuring
 - ### Methodology
   The right rectangle is first isolated and an OpenCV function is then used to determine the width to height ratio of the rectangle. This ratio is used to ensure the correct rectangle in the video feed is being recognized.
-  <br><br><img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/19ac3721-5b70-4203-a3e6-842d3d254394" width="550vw"><br><br>
+<br><br><img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/19ac3721-5b70-4203-a3e6-842d3d254394" width="550vw"><br><br>
+Each time the begin symbol is recognized, the delivery robot travels a total of 9.5cm in a time of 0.3s. Thus, the more times the symbol is shown, the further it travels.
+<br><br>A stop measuring symbol is used to end the distance measuring process. This distance is displayed in the output camera feed viewed by the user. By using an OpenCV function to isolate the red circle from the traffic light symbol, Hough Circle Transform is then used to locate any circles in red from the ROI.
+<br><br><img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/f6558f47-3a56-4eda-bcb3-134e13338147" width="550vw"><br><br>
+Once the symbol is recognized, the total travelled distance will be displayed on the output camera feed for the user’s view. The distance counter will also reset to prepare for the next distance measuring process.
+- ### Symbols
+  <img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/313e4f12-12df-407a-8f13-c1a78754780a" width="180vw">
+  <img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/d8e6453d-f775-4611-97ad-5a6c90cac6d3" width="180vw">
+
+### Shape Counting
+- ### Methodology
+  The shapes were converted to orange to prevent background interference during the shape counting process. By utilizing the OpenCV library, contour finding was used to return the edges of any shape within the ROI. From these contours, contour approximation then locates connecting edges to return shapes. A higher arc length was set to prevent micro contours from forming and affecting the shape counting. The shapes are identified with their number of edges. Once identified, the shapes’ names are displayed on the output camera feed for the user’s view.
+<br><br><img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/fc6754e5-18f9-4b7f-9f6e-f8159b4dbf83" width="550vw">
+- ### Symbol
+  <img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/ae2e77c5-ae63-4843-833f-c78db4246b2b" width="180vw">
+
+## Code Structure
