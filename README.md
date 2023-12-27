@@ -59,3 +59,12 @@ Once the symbol is recognized, the total travelled distance will be displayed on
   <img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/ae2e77c5-ae63-4843-833f-c78db4246b2b" width="180vw">
 
 ## Code Structure
+- [direction.py](https://github.com/julianganjs/symbol-recognizing-robot-car/blob/main/direction.py): This code allows the robot car to follow directions by recoginizing the four directional symbols and stop symbol.
+- [distance.py](https://github.com/julianganjs/symbol-recognizing-robot-car/blob/main/distance.py): This code allows the robot car to measure distances by recoginizing the start measuring symbol and traffic light symbol.
+- [shapes.py](https://github.com/julianganjs/symbol-recognizing-robot-car/blob/main/shapes.py): This code allows the robot car to count shapes by recognizing the shapes symbol.
+
+## Poster
+<img src="https://github.com/julianganjs/symbol-recognizing-robot-car/assets/127673790/8ce68b6a-22ad-4d08-bd10-e6ffc4f92845" width="1000vw">
+
+## License
+This project is licensed under the MIT License.
